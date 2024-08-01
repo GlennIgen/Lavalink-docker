@@ -16,7 +16,7 @@ docker network create --subnet=10.55.55.0/24 LavalinkNet
 ## Installation
 Run the Lavalink container with the following command (remember to change IP and Docker Net):
 ```bash
-docker run -v /host/mount/point:/app --net YourDockerNetwork --ip 10.55.55.2 -it -p 2333:2333 --name LavalinkNet glennigen/lavalink:latest-alpine
+docker run -v /host/mount/point:/app:rw --net YourDockerNetwork --ip 10.55.55.2 -it -p 2333:2333 --name LavalinkNet glennigen/lavalink:latest-alpine
 ```
 
 ## Usage
