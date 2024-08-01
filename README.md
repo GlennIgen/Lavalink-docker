@@ -1,7 +1,7 @@
 # Lavalink Docker
 
 ## Overview
-Lavalink Docker is a project aimed at spawning a Lavalink container without any initial configuration. Users are responsible for creating their own configuration, allowing them to choose between Lavalink 3 or 4 and set up their own `application.yml` file as needed.
+Lavalink Docker is a project aimed at spawning a Lavalink container without any initial configuration. Users are responsible for creating their own configuration, allowing them to choose between Lavalink 3 or 4 and set up their own `application.yml` file as needed. Check out the developers at https://github.com/lavalink-devs/Lavalink
 
 ## Prerequisites
 - Docker installed on your system
