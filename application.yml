@@ -1,0 +1,66 @@
+#THIS IS JUST A TEMPLATE - from aikaterna https://github.com/aikaterna
+plugins:
+  youtube:
+    enabled: true
+      allowSearch: true
+      allowDirectVideoIds: true
+      allowDirectPlaylistIds: true
+      clients:
+        - MUSIC
+        - WEB
+        - ANDROID_TESTSUITE
+        - TVHTML5EMBEDDED
+        - ANDROID_LITE
+        - MEDIA_CONNECT
+        - IOS
+      WEB:
+        playback: true
+      TVHTML5EMBEDDED:
+        playlistLoading: false
+        videoLoading: false
+        searching: false
+lavalink:
+  plugins:
+  - dependency: dev.lavalink.youtube:youtube-plugin:1.4.0
+    repository: https://maven.lavalink.dev/releases
+  server:
+    password: "youshallnotpass"
+    sources:
+      bufferDurationMs: 400
+      frameBufferDurationMs: 1000
+      gc-warnings: true
+      password: youshallnotpass
+      playerUpdateInterval: 1
+      soundcloudSearchEnabled: true
+      sources:
+        bandcamp: true
+        http: true
+        local: true
+        soundcloud: true
+        twitch: true
+        vimeo: true
+        youtube: false
+      youtubePlaylistLoadLimit: 100
+      youtubeSearchEnabled: true
+logging:
+  file:
+    path: ./logs/
+  level:
+    lavalink: INFO
+    root: INFO
+  logback:
+    rollingpolicy:
+      max-history: 15
+      max-size: 10MB
+metrics:
+  prometheus:
+    enabled: false
+    endpoint: /metrics
+sentry:
+  dsn: ''
+  environment: ''
+server: # REST and WS server
+  port: 2333
+  address: 10.55.55.2
+  http2:
+    enabled: false # Whether to enable HTTP/2 support
