@@ -1,26 +1,6 @@
-plugins:
-  youtube:
-    enabled: true
-    allowSearch: true
-    allowDirectVideoIds: true
-    allowDirectPlaylistIds: true
-    clients:
-      - MUSIC
-      - WEB
-      - ANDROID_TESTSUITE
-      - TVHTML5EMBEDDED
-      - ANDROID_LITE
-      - MEDIA_CONNECT
-      - IOS
-    WEB:
-      playback: true
-    TVHTML5EMBEDDED:
-      playlistLoading: false
-      videoLoading: false
-      searching: false
 lavalink:
   plugins:
-  - dependency: dev.lavalink.youtube:youtube-plugin:1.4.0
+  - dependency: dev.lavalink.youtube:youtube-plugin:1.5.2
     repository: https://maven.lavalink.dev/releases
   server:
     bufferDurationMs: 400
@@ -37,8 +17,8 @@ lavalink:
       twitch: true
       vimeo: true
       youtube: false
-      youtubePlaylistLoadLimit: 100
-      youtubeSearchEnabled: true
+    youtubePlaylistLoadLimit: 100
+    youtubeSearchEnabled: true
 logging:
   file:
     path: ./logs/
@@ -53,11 +33,31 @@ metrics:
   prometheus:
     enabled: false
     endpoint: /metrics
+plugins:
+  youtube:
+    TVHTML5EMBEDDED:
+      playlistLoading: false
+      searching: false
+      videoLoading: false
+    WEB:
+      playback: true
+    allowDirectPlaylistIds: true
+    allowDirectVideoIds: true
+    allowSearch: true
+    clients:
+    - MUSIC
+    - WEB
+    - ANDROID_TESTSUITE
+    - TVHTML5EMBEDDED
+    - ANDROID_LITE
+    - MEDIA_CONNECT
+    - IOS
+    enabled: true
 sentry:
   dsn: ''
   environment: ''
 server: # REST and WS server
-  port: 2333
   address: 10.55.55.2
+  port: 2333
   http2:
     enabled: false # Whether to enable HTTP/2 support
