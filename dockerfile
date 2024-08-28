@@ -16,4 +16,4 @@ RUN adduser -u $USER_UID -D $USERNAME \
     && chown $USERNAME:$USERNAME /app/ -R \
     && chmod a+rw /app -R
 USER lavalink
-ENTRYPOINT [ "java","-jar","/app/Lavalink.jar","--spring.config.location=/app/application.yml" ]
+ENTRYPOINT [ "java","-jar","/app/Lavalink.jar" ]

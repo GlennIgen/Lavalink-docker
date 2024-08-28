@@ -1,0 +1,4 @@
+docker build -t glennigen/lavalink:latest-alpine .
+docker network create --subnet=10.55.55.0/24 lavalinknet
+docker run --name lavalink --net lavalinknet --ip 10.55.55.2 -v C:\Users\USER\Documents\GitHub\storage_temp\lavalink:/app -it glennigen/lavalink:latest-alpine
+docker push glennigen/lavalink:latest-alpine

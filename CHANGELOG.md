@@ -18,3 +18,11 @@
   - Updated YouTube plugin dependency to version 1.5.2
   - Reorganized configuration for `plugins.youtube` for better readability
   - Removed deprecated and unnecessary configuration options
+
+## [0.1.3] - 2024-08-28
+- Added a new script file `docker_push.txt` for future Docker Hub pushes
+- Updated `Dockerfile`:
+  - Simplified ENTRYPOINT to "java -jar /app/Lavalink.jar"
+- Updated `application.yml`:
+  - Updated YouTube plugin dependency from `youtube-plugin:1.5.2` to `youtube-plugin:1.7.2`
+  - Removed HTTP/2 support configuration

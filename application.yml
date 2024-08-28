@@ -1,6 +1,6 @@
 lavalink:
   plugins:
-  - dependency: dev.lavalink.youtube:youtube-plugin:1.5.2
+  - dependency: dev.lavalink.youtube:youtube-plugin:1.7.2
     repository: https://maven.lavalink.dev/releases
   server:
     bufferDurationMs: 400
@@ -56,8 +56,6 @@ plugins:
 sentry:
   dsn: ''
   environment: ''
-server: # REST and WS server
+server:
   address: 10.55.55.2
   port: 2333
-  http2:
-    enabled: false # Whether to enable HTTP/2 support
