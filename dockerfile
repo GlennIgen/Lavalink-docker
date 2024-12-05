@@ -7,13 +7,19 @@ ARG USERNAME=lavalink
 ARG USER_UID=1000
 #
 #Create user defined by $USERNAME
-RUN adduser -u $USER_UID -D $USERNAME \
+RUN adduser -u $USER_UID -D $USERNAME
     #
     # Updating and installing requirements for Lavalink
-    && apk update \
-    && apk upgrade --no-cache \
-    && apk add openjdk21-jdk libgcc \
-    && chown $USERNAME:$USERNAME /app/ -R \
-    && chmod a+rw /app -R
-USER lavalink
-ENTRYPOINT [ "java","-jar","/app/Lavalink.jar" ]
+RUN apk update
+RUN apk upgrade --no-cache
+RUN apk add openjdk21-jdk libgcc su-exec
+#RUN chown $USERNAME:$USERNAME /app/ -R
+RUN chown $USERNAME:users /app
+#RUN chmod a+rw /app -R
+RUN chmod a+rw /app
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
+#Run entrypoint script then java command
+ENTRYPOINT [ "/usr/local/bin/entrypoint.sh" ]
+CMD ["java", "-jar", "/app/Lavalink.jar"]

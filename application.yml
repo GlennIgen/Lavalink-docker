@@ -1,6 +1,6 @@
 lavalink:
   plugins:
-  - dependency: dev.lavalink.youtube:youtube-plugin:1.7.2
+  - dependency: dev.lavalink.youtube:youtube-plugin:1.10.2
     repository: https://maven.lavalink.dev/releases
   server:
     bufferDurationMs: 400
@@ -35,27 +35,26 @@ metrics:
     endpoint: /metrics
 plugins:
   youtube:
+    clients:
+      - MUSIC
+      - WEB
+      - WEBEMBEDDED
+      - TVHTML5EMBEDDED
+      - IOS
+    enabled: true
     TVHTML5EMBEDDED:
       playlistLoading: false
       searching: false
       videoLoading: false
     WEB:
       playback: true
-    allowDirectPlaylistIds: true
-    allowDirectVideoIds: true
-    allowSearch: true
-    clients:
-    - MUSIC
-    - WEB
-    - ANDROID_TESTSUITE
-    - TVHTML5EMBEDDED
-    - ANDROID_LITE
-    - MEDIA_CONNECT
-    - IOS
-    enabled: true
+      allowDirectPlaylistIds: true
+      allowDirectVideoIds: true
+      allowSearch: true
 sentry:
   dsn: ''
   environment: ''
+#Remember to set the address to the same IP as the Lavalink server/container
 server:
-  address: 10.55.55.2
+  address: 10.8.1.2
   port: 2333
